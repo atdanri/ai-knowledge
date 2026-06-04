@@ -1,4 +1,4 @@
-# personal opionion on kiro
+# personal opinion on kiro
 [🔙README](/README.md)
 
 In my opinion, Kiro is probably one of the most powerful public AI development tools, or at least very close to it. One of its distinctive features is that it has different modes – a ‘Vibe’ mode (chat first), which is similar to the standard approach of other tools (such as Copilot), and a ‘Spec’ mode (plan first). For the latter, the spec files from the [kiro default files](/ai/kiro/kiro-files.md) are particularly relevant. Kiro (and the developer, of course) aims to define as much as possible for a development process, then break it down into task steps and work through them sequentially. With the right specs, good context and a user who knows how to use Kiro well, even larger, executable applications can be generated (which, of course, still need to be tested and reviewed – although Kiro can even be helpful with that to some extent). This means, for example, that even non-developers or developers who are not familiar with a particular technology can use kiro in spec mode to create a demo or prototype very quickly.
