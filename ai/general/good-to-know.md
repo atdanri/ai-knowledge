@@ -9,3 +9,6 @@ All AI development tools will ask for permission to execute commands, run progra
 
 ### niche areas 
 the less information there is on a topic in the web, the less effective the model tends to be in most cases. Consider whether AI is the right choice for this topic
+
+### image formats
+When providing images as context for AI tools (including directly in chat), these two most common image formats are virtually the standard. JPG should be the quickest to process, but can result in a loss of detail with large, complex images (as images are scaled to fit a maximum window, even though this is often very large). PNG does not have this problem, but is processed slightly more slowly.
