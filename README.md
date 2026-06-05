@@ -1,4 +1,5 @@
 # personal collection of AI knowledge topics
+Personal knowledge base and cheat sheet for AI development, prompt engineering, and context optimization,... Features configuration guides and insights for tools like GitHub Copilot and Kiro.
 
 ## general
 - [AI knowledge external link collection](ai/general/link-collection.md)
