@@ -9,6 +9,7 @@ I have to say, though, that I haven’t had much opportunity to use spec mode fo
 
 One drawback of Kiro is that it doesn’t have any official plugins for other IDEs. You have to rely on the Kiro IDE or the CLI.
 
+---
 > ❗*There are some crazy videos about the spec mode on YouTube*
 
 
