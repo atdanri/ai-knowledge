@@ -4,25 +4,25 @@
 Personal knowledge base and cheat sheet for AI development, prompt engineering, and context optimization,... Features configuration guides and insights for tools like GitHub Copilot and Kiro.
 
 ## general
-- [AI knowledge external link collection](ai/general/link-collection.md)
+- [AI knowledge external link collection](ai/general/linkCollection.md)
 - [economize - need fewer tokens](ai/general/economize.md)
 - [prompting](ai/general/prompting.md)
 - [own AI experience](ai/general/experience.md)
-- [good to know topics](ai/general/good-to-know.md)
-- [debugging with AI dev tools](ai/general/debugging.md)
+- [good to know topics](ai/general/goodToKnow.md)
+- [debugging and refactoring with AI dev tools](ai/general/debuggingAndRefactoring.md)
 
-## AI tools
+## AI dev tools
 
 The focus here, in terms of tools, is on Kiro and Copilot
 
 ### kiro
-- [kiro default files & directories(primarily for spec-driven development)](ai/kiro/kiro-files.md)
+- [kiro default files & directories(primarily for spec-driven development)](ai/kiro/kiroFiles.md)
 - [kiro CLI knowledge](ai/kiro/knowledge.md)
 - [personal opinion on kiro](ai/kiro/opinion.md)
 
 ### copilot
-- [copilot default files & directories](ai/copilot/copilot-files.md)
+- [copilot default files & directories](ai/copilot/copilotFiles.md)
 - [personal opinion on copilot](ai/copilot/opinion.md)
 
 ### antigravity
-- [antigravity default files & directories](ai/antigravity/antigravity-files.md)
+- [antigravity default files & directories](ai/antigravity/antigravityFiles.md)
