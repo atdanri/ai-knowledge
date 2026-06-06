@@ -1,4 +1,6 @@
 # personal collection of AI knowledge topics
+> ⚠️ **Attention:** no guarantee of absolute accuracy or that the content is still up to date!
+
 Personal knowledge base and cheat sheet for AI development, prompt engineering, and context optimization,... Features configuration guides and insights for tools like GitHub Copilot and Kiro.
 
 ## general
@@ -24,6 +26,3 @@ The focus here, in terms of tools, is on Kiro and Copilot
 
 ### antigravity
 - [antigravity default files & directories](ai/antigravity/antigravity-files.md)
-
----
-> ⚠️ **Attention:** no guarantee of absolute accuracy or that the content is still up to date!
