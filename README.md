@@ -9,10 +9,11 @@ Personal knowledge base and cheat sheet for AI development, prompt engineering, 
 - [prompting](ai/general/prompting.md)
 - [own AI experience](ai/general/experience.md)
 - [good to know topics](ai/general/goodToKnow.md)
-- [debugging and refactoring with AI dev tools](ai/general/debuggingAndRefactoring.md)
+- [debugging and refactoring](ai/general/debuggingAndRefactoring.md)
+- [testing](ai/general/testing.md)
+- [other development topics](ai/general/otherDevelopment.md)
 
-## AI dev tools
-
+## AI tools
 The focus here, in terms of tools, is on Kiro and Copilot
 
 ### kiro
@@ -26,3 +27,6 @@ The focus here, in terms of tools, is on Kiro and Copilot
 
 ### antigravity
 - [antigravity default files & directories](ai/antigravity/antigravityFiles.md)
+
+---
+> ❗*It is worth bearing in mind that there is currently a great deal of activity in the field of AI development tools. It is quite possible that the tools discussed here will soon no longer be among the top tools. More and more tools are becoming available, some of which are optimised for specific areas of development. The future is uncertain*

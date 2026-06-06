@@ -19,6 +19,9 @@
 ## general
 - [promtcowboy - optimize prompts](https://www.promptcowboy.ai/)
 
+### LLMs
+- [openrouter.ai/compare](https://openrouter.ai/compare) - compare LLMs by key metrics...
+
 ### MCP
 - [MCP docs](https://modelcontextprotocol.io/docs)
 - [danvega tutorial for development of a mcp server with Java & Spring AI](https://www.danvega.dev/blog/creating-your-first-mcp-server-java)
