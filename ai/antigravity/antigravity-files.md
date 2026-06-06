@@ -5,27 +5,37 @@ Overview of the default file/folder structure used by Antigravity for agent-firs
 
 ```
 <workspace-root>/                   # Workspace scope
+├── GEMINI.md                       # ⭐ Project-level context/steering file (instructions, coding style, architecture)
+├── <subdir>/GEMINI.md              # ⭐ Component-level context override (scoped to subdirectory)
+├── .geminiignore                   # ⭐ Glob patterns for files/dirs the agent should ignore (like .gitignore)
+├── .aiexclude                      # ⭐ AI-wide file exclusion list (respected by Gemini Code Assist & CLI)
 ├── agents.md                       # Define custom agent personas (YAML front-matter + Markdown body)
-├── .agents/                        # Workspace-level agent resources
-│   └── skills/                     # Workspace-level skill definitions (modular task instructions)
-│       └── <skill-name>/           # Individual skill package folder
-│           └── SKILL.md            # Skill instructions and metadata
-└── workflows/                      # Custom workflow automation templates / slash commands
+├── .agent/                         # Workspace-level agent resources
+│   ├── skills/                     # Workspace-level skill definitions (modular task instructions)
+│   │   └── <skill-name>/           # Individual skill package folder
+│   │       └── SKILL.md            # Skill instructions and metadata
+│   └── workflows/                  # Custom workflow/slash-command definitions (Markdown + YAML front-matter)
+│       └── <workflow-name>.md      # Becomes a /<workflow-name> slash command
+└── .antigravity/                   # Project-wide standards and behavior guidelines
+    └── rules.md                    # Project rules enforced by the agent
 
-~/.gemini/config/                   # User-level (global) configuration - applies across all workspaces
-├── config.json                     # General platform settings (model selection, execution policies, etc.)
-├── mcp_config.json                 # Global Model Context Protocol (MCP) server configurations
-├── hooks.json                      # Global automation hooks (event -> action)
-├── projects/                       # Workspace projects registry
-│   └── <project-id>.json           # Pre-project settings and permission policies
-├── plugins/                        # Bundles of custom skills, subagents, and configurations
-│   └── <plugin-name>/
-│       ├── plugin.json             # Plugin metadata (name, version, description)
-│       ├── skills/                 # Plugin-provided skills
-│       └── agents/                 # Plugin-provided subagents
-├── skills/                         # Global skill definitions (.md files/directories)
-├── agents/                         # Global agent definitions (.md files/directories)
-└── sidecars/                       # Sidecar extensions configuration
+~/.gemini/                          # User-level (global) scope
+├── GEMINI.md                       # ⭐ Global context/steering file (personal defaults, universal coding style)
+├── settings.json                   # ⭐ Global IDE/CLI settings (model prefs, themes, MCP paths, etc.)
+└── config/                         # Global configuration directory — applies across all workspaces
+    ├── config.json                 # General platform settings (model selection, execution policies, etc.)
+    ├── mcp_config.json             # Global Model Context Protocol (MCP) server configurations
+    ├── hooks.json                  # Global automation hooks (event -> action)
+    ├── projects/                   # Workspace projects registry
+    │   └── <project-id>.json       # Per-project settings and permission policies
+    ├── plugins/                    # Bundles of custom skills, subagents, and configurations
+    │   └── <plugin-name>/
+    │       ├── plugin.json         # Plugin metadata (name, version, description)
+    │       ├── skills/             # Plugin-provided skills
+    │       └── agents/             # Plugin-provided subagents
+    ├── skills/                     # Global skill definitions (.md files/directories)
+    ├── agents/                     # Global agent definitions (.md files/directories)
+    └── sidecars/                   # Sidecar extensions configuration
 
 <appDataDir>/antigravity-ide/       # App runtime state, logs, and cache (e.g., C:\Users\xyz\.gemini\antigravity-ide)
 ├── mcp_config.json                 # Workspace-specific MCP config override
@@ -50,6 +60,85 @@ Overview of the default file/folder structure used by Antigravity for agent-firs
 ```
 
 ## Key File Details
+
+### Context / Steering Files (`GEMINI.md`)
+
+**Short description**\
+The primary mechanism for providing persistent, project-specific instructions to the AI agent. Acts as the agent's "project DNA".
+
+**Details**\
+Antigravity uses a **hierarchical** context system. `GEMINI.md` files are automatically discovered and concatenated — more specific files override more general ones:
+
+| Level | Path | Scope |
+|---|---|---|
+| Global | `~/.gemini/GEMINI.md` | Personal defaults for all projects |
+| Project | `<workspace-root>/GEMINI.md` | Architecture, stack, conventions for this project |
+| Component | `<subdir>/GEMINI.md` | Module-specific patterns (e.g., DB schemas, API styles) |
+
+- Use `/memory show` to inspect the currently active combined context.
+- Use `/memory refresh` to reload after editing a `GEMINI.md` file mid-session.
+- Use `@` imports inside `GEMINI.md` to modularize context across files.
+- Use `/init` in the CLI to generate a starter `GEMINI.md` for a project.
+
+**Example**
+
+```md
+# Project Context
+
+## Tech Stack
+- TypeScript + React 19, Vite
+- TailwindCSS v4 for styling
+- Zustand for state management
+
+## Coding Standards
+- Always use JSDoc comments for public APIs
+- Prefer functional components over class components
+- Use named exports, avoid default exports
+
+## Architecture
+@docs/architecture.md
+```
+
+---
+
+### Ignore Files (`.geminiignore` / `.aiexclude`)
+
+**Short description**\
+Control which files and directories the AI agent is allowed to index, read, or use as context.
+
+**Details**
+
+| File | Scope | Notes |
+|---|---|---|
+| `.geminiignore` | Gemini CLI / Antigravity only | Native ignore file; supports `.gitignore` syntax. Use `!filename` to un-ignore. |
+| `.aiexclude` | All AI tools (Gemini, Code Assist, etc.) | Industry-standard exclusion; protects sensitive data across tooling. |
+
+Both follow glob pattern syntax. The CLI also respects `.gitignore` by default.
+
+**Example** (`.geminiignore`)
+
+```gitignore
+# Ignore build output and secrets
+dist/
+node_modules/
+.env*
+*.secret
+
+# But allow the env example
+!.env.example
+```
+
+---
+
+### Global Settings (`~/.gemini/settings.json`)
+
+**Short description**\
+Global IDE and CLI settings for model preferences, themes, MCP server paths, and general environment configuration.
+
+**Details**\
+This file sits at the `~/.gemini/` root level (not inside `config/`). It applies user-wide defaults for the Antigravity IDE and CLI.
+
+---
 
 ### Agent Personas (`agents.md` or `~/.gemini/config/agents/`)
 
@@ -76,7 +165,7 @@ Always verify that...
 
 ---
 
-### Workspace Skills (`.agents/skills/<skill-name>/SKILL.md`)
+### Workspace Skills (`.agent/skills/<skill-name>/SKILL.md`)
 
 **Short description**\
 Modular task instructions that can be dynamically loaded by agents to perform specific procedures or workflows.
@@ -96,6 +185,44 @@ description: Step-by-step workflow for reviewing pull requests
 2. Verify test coverage for all new code paths
 ...
 ```
+
+---
+
+### Workflows (`.agent/workflows/<name>.md`)
+
+**Short description**\
+Custom automation recipes stored as Markdown files that become slash commands in the IDE.
+
+**Details**\
+Each `.md` file in `.agent/workflows/` is auto-registered as a `/<filename>` slash command. Files require a YAML front-matter with a `description` field.
+
+**Special annotations:**
+- `// turbo` before a step → execute that command without confirmation
+- `// turbo-all` in the file → auto-execute all commands in the workflow
+
+**Example** (`.agent/workflows/deploy.md`)
+
+```md
+---
+description: Build and deploy the application to staging
+---
+## Steps
+// turbo
+1. Run `npm run build` to create the production bundle
+2. Run `npm run test` to verify all tests pass
+3. Run `gcloud app deploy --project=my-app --version=staging`
+4. Verify the deployment at https://staging.my-app.com
+```
+
+---
+
+### Project Rules (`.antigravity/rules.md`)
+
+**Short description**\
+Project-wide behavior rules and standards that the agent enforces automatically.
+
+**Details**\
+Rules placed in `.antigravity/rules.md` serve as persistent guardrails for the agent, complementing `GEMINI.md` context with enforceable constraints.
 
 ---
 
