@@ -5,6 +5,8 @@ In my opinion, Kiro is probably one of the most powerful public AI development t
 
 Spec mode is what makes Kiro special. Admittedly, you can replicate the mode using the right context and prompts. With a bit of effort, you can achieve similar behaviour in Copilot for a project. Other AI tools have already integrated parts of the spec mode. However, I haven’t yet found any other tool that supports this approach with the same level of consistency.
 
+> *While this repository was being created, the Plan Agent for Copilot was released. It is by no means identical to Kiro’s spec mode, but it attempts to achieve something similar. As it is simpler to use, it is very well suited to small and medium-sized adjustments where using Kiro’s spec mode might, in some cases, be too cumbersome. So there is a lot of development going on in this area*
+
 I have to say, though, that I haven’t had much opportunity to use spec mode for work so far. It’s mainly useful if your colleagues are using it too. Then, in an existing project, the context and structure are always ready to go, and you don’t need to do much preparation. For minor tweaks, you’re much quicker in Vibe mode. However, it is particularly effective when it comes to newly developed components.
 
 One drawback of Kiro is that it doesn’t have any official plugins for other IDEs. You have to rely on the Kiro IDE or the CLI.
