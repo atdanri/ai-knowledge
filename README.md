@@ -33,7 +33,7 @@ The focus here, in terms of tools, is on Kiro and Copilot
 
 ### antigravity
 - [antigravity default files & directories](docs/ai/tools/antigravity/antigravityFiles.md)
-- [my unqualified opinion on Antigravity]()
+- [my unqualified opinion on Antigravity](docs/ai/tools/antigravity/opinion.md)
 
 ---
 > ❗*It is worth bearing in mind that there is currently a great deal of activity in the field of AI development tools. It is quite possible that the tools discussed here will soon no longer be among the top tools. More and more tools are becoming available, some of which are optimised for specific areas of development. The future is uncertain*
