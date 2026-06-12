@@ -8,12 +8,14 @@ Spec mode is what makes Kiro special. Admittedly, you can replicate the mode usi
 I have to say, though, that I haven’t had much opportunity to use spec mode for work so far. It’s mainly useful if your colleagues are using it too. Then, in an existing project, the context and structure are always ready to go, and you don’t need to do much preparation. For minor tweaks, you’re much quicker in Vibe mode. However, it is particularly effective when it comes to newly developed components.
 
 ## drawbacks - in my opinion
-- Kiro it doesn’t have any official plugins for other IDEs. You have to rely on the Kiro IDE or the CLI. 
--Kiro can be untransparent at times. For example, unlike Copilot, the models used for prompt processing are not displayed in Auto Mode. The chatbot also acts in a similarly unresponsive manner and doesn’t even attempt to provide a plausible answer(primarily in the IDE).
+- not the largest user base
+- Kiro it doesn’t have any official plugins for other IDEs. You have to rely on the Kiro IDE or the CLI(for the CLI features ACP is an option - see [ACP](../acp.md)). 
+- Kiro can be untransparent at times. For example, unlike Copilot, the models used for prompt processing are not displayed in Auto Mode. The chatbot also acts in a similarly unresponsive manner and doesn’t even attempt to provide a plausible answer(primarily in the IDE).
 - Inconsistency between the IDE and the CLI. The IDE supports the spec mode that Kiro is known for, whereas the CLI does not support this; instead, it offers features such as a plan agent (very similar to the one in Copilot) and knowledge bases. Although these would make sense in the IDE, I cannot use them there in the Vibe mode.
 
 ## my conclusion
 I currently have the opportunity to work with Kiro and Copilot at my workplace, and despite a few drawbacks, I generally prefer Kiro.
+
 ---
 > ❗*There are some crazy videos about the spec mode on YouTube*
 

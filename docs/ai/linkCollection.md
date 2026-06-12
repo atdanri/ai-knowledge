@@ -18,6 +18,7 @@
 
 ## general
 - [promtcowboy - optimize prompts](https://www.promptcowboy.ai/)
+- [caveman - project to minimize chat communication and token consumption](https://github.com/juliusbrussee/caveman)
 
 ### LLMs
 - [openrouter.ai/compare](https://openrouter.ai/compare) - compare LLMs by key metrics...
