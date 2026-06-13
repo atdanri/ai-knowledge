@@ -23,17 +23,20 @@ The focus here, in terms of tools, is on Kiro and Copilot
 - [Caveman - minimize chat communication and token consumption](docs/ai/tools/caveman.md)
 
 ### kiro
-- [kiro default files & directories(primarily for spec-driven development)](docs/ai/tools/kiro/kiroFiles.md)
+- [kiro default files & directories(primarily for spec-driven development)](docs/ai/tools/kiro/files.md)
 - [kiro CLI knowledge](docs/ai/tools/kiro/knowledge.md)
 - [personal opinion on kiro](docs/ai/tools/kiro/opinion.md)
 
 ### copilot
-- [copilot default files & directories](docs/ai/tools/copilot/copilotFiles.md)
+- [copilot default files & directories](docs/ai/tools/copilot/files.md)
 - [personal opinion on copilot](docs/ai/tools/copilot/opinion.md)
 
 ### antigravity
-- [antigravity default files & directories](docs/ai/tools/antigravity/antigravityFiles.md)
+- [antigravity default files & directories](docs/ai/tools/antigravity/files.md)
 - [my unqualified opinion on Antigravity](docs/ai/tools/antigravity/opinion.md)
+
+### claude code
+- [claude code default files & directories](docs/ai/tools/claude/files.md)
 
 ---
 > ❗*It is worth bearing in mind that there is currently a great deal of activity in the field of AI development tools. It is quite possible that the tools discussed here will soon no longer be among the top tools. More and more tools are becoming available, some of which are optimised for specific areas of development. The future is uncertain*
