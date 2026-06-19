@@ -26,6 +26,7 @@ The focus here, in terms of tools, is on Kiro and Copilot
 - [kiro default files & directories(primarily for spec-driven development)](docs/ai/tools/kiro/files.md)
 - [kiro CLI knowledge](docs/ai/tools/kiro/knowledge.md)
 - [personal opinion on kiro](docs/ai/tools/kiro/opinion.md)
+- [kiro spec mode sample project](https://github.com/atdanri/kiro-spec-sample)
 
 ### copilot
 - [copilot default files & directories](docs/ai/tools/copilot/files.md)
