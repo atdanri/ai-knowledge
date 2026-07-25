@@ -6,6 +6,7 @@
 ### kiro
 - [docs for IDE & CLI](https://kiro.dev/docs/)
 - kiro MCP docs [IDE](https://kiro.dev/docs/mcp/) | [CLI](https://kiro.dev/docs/cli/mcp/)
+- kiro agent skills docs [IDE](https://kiro.dev/docs/skills/) | [CLI](https://kiro.dev/docs/cli/skills/)
 
 ### copilot
 - [docs(en)](https://docs.github.com/en/copilot) 
@@ -29,4 +30,7 @@
 
 ### ACP
 - [ACP docs](https://agentclientprotocol.com/get-started/introduction)
+
+### Skills
+- [Agent skills definition](https://github.com/agentskills/agentskills)
 

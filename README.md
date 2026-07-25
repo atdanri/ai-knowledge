@@ -19,7 +19,7 @@ Personal knowledge base and cheat sheet for AI development, prompt engineering, 
 ## tools
 The focus here, in terms of tools, is on Kiro and Copilot
 
-- [Agentic Coding Protocol - Integrating tools into IDEs](docs/ai/tools/acp.md)
+- [Agentic Client Protocol - Integrating tools into IDEs](docs/ai/tools/acp.md)
 - [Caveman - minimize chat communication and token consumption](docs/ai/tools/caveman.md)
 
 ### kiro

@@ -15,6 +15,13 @@ There are various ways to harden tools against token wastage. For example, in so
 ### model selection
 If you’re using the tool to carry out simple, routine tasks, you shouldn’t use the most expensive (and often most powerful) model. Smaller, more cost-effective models usually cope just fine with this. The auto-mode on most tools is already quite good. If you want to control this yourself, apart from manual selection, most AI tools allow you to do so via agent hooks or rules. However, you’ll have to decide for yourself whether the effort is worth it.
 
+### cached input tokens
+Cached input tokens are parts of a prompt—typically an unchanged prefix such as system instructions, conversation history, tool definitions, or other context—that the provider can reuse from an earlier request. Reusing them can reduce both cost and latency, but the exact discount and caching behavior depend on the provider and model. Any part of the input that is not cached is processed and billed as regular input.
+
+A cache hit generally requires the relevant prompt prefix to remain unchanged and the cache entry to still be valid. Changing the model, effort level, system instructions, earlier conversation content, or available tools—for example, by adding an MCP server—may prevent reuse. Cache entries can also expire after a provider-specific retention period. These changes do not universally cause a cache miss, and remaining in the same session does not guarantee a cache hit.
+
+To benefit from caching, keep reusable context stable and place it before content that changes between requests. Avoid unnecessary changes to the model, settings, and tool configuration while working on a related sequence of tasks. However, do not keep using a long session solely to preserve the cache: a growing conversation still increases the amount of context that must be handled and may reduce response quality.
+
 ## user behavior
 
 ### plan before implementation
@@ -25,3 +32,6 @@ when tokens need to be saved, use freely available AI chatbots or a standard sea
 
 ### document context optimisation 
 It can be very useful to keep documents(e.g. documentation) required for context strictly separate by topic and to keep them small. This helps to minimise the overhead involved in loading context
+
+### project optimization
+If the AI makes mistakes because your project contains incorrect information, lacks relevant details (such as type information), or presents other pitfalls, improve the project accordingly. Do not let the AI make the same mistake repeatedly.
